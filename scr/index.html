@@ -11,13 +11,25 @@
 <body>
   <main>
     <section class="style">
+
       <img id = "bg_card_fornt" src="/images/bg-card-front.png">
       <img id = "bg_card_back" src="/images/bg-card-back.png">
+      
     </section>
+
     <section class="style_form">
 
       <form>
-        <label for=""
+
+        <label for = "card_name">cardholder name</label>
+        <input type = "text" required><br/>
+        <label for = "card_number">card Number</label>
+        <input type = "number" required><br/>
+        <label for = "card_date">exp.Date (MM/YY)</label>
+        <div class="card_date_wrap">
+          <input type = "number"><input type="number"><input type="number">
+        </div><br>
+        <button type="submit" id = "card_btn">conform</button>
       </form>
 
     </section>

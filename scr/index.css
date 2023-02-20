@@ -4,6 +4,9 @@
 * {
     padding: 0px;
     margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
 main {
     display: grid;
@@ -14,20 +17,60 @@ main {
 
 .style {
     grid-area: style;
-    background-color: rgb(30, 169, 224);
-    border: var(--border);
     height: inherit;
 }
 
 .style_form {
     grid-area: form;
-    border: var(--border);
-    background-color: rgb(30, 169, 224);
     height: inherit;
+    display: grid;
+    place-content: center;
 }
+
+form {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label {
+    line-height: 25px;
+    letter-spacing: 1.7px;
+}
+
+input {
+    height: 24px;
+    outline:2px solid rgb(3, 166, 230);
+    border:none;
+    border-radius: 5px;
+}
+
+.card_date_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.card_date_wrap>input:nth-child(1){
+    width: 22%;
+}
+.card_date_wrap>input:nth-child(2){
+    width: 22%;
+}
+.card_date_wrap>input:nth-child(3){
+    width: 47%;
+}
+
+#card_btn{
+    height: 29px;
+    color: white;
+    background-color: rgb(2, 2, 20);
+    border-radius: 5px;
+}
+
 #bg_card_front {
     position: absolute;
 }
+
 #bg_front_back {
     position: absolute;
 }
