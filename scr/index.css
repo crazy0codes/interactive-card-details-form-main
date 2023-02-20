@@ -1,0 +1,36 @@
+:root {
+    --border : 2px solid white;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+}
+main {
+    display: grid;
+    grid-template-areas: 
+    "style form form form";
+    height: 100vh;
+}
+
+.style {
+    grid-area: style;
+    background-color: rgb(30, 169, 224);
+    border: var(--border);
+    height: inherit;
+}
+
+.style_form {
+    grid-area: form;
+    border: var(--border);
+    background-color: rgb(30, 169, 224);
+    height: inherit;
+}
+#bg_card_front {
+    position: absolute;
+}
+#bg_front_back {
+    position: absolute;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
