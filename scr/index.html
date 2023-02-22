@@ -12,8 +12,8 @@
   <main>
     <section class="style">
 
-      <img class = "bg_card_fornt" src="/images/bg-card-front.png">
-      <img class = "bg_card_back" src="/images/bg-card-back.png">
+      <!-- <img class = "bg_card_fornt" src="/images/bg-card-front.png">
+      <img class = "bg_card_back" src="/images/bg-card-back.png"> -->
       
     </section>
 
@@ -22,21 +22,21 @@
       <form>
 
         <label for = "card_name">CARDHOLDER NAME</label>
-        <input type = "text" required placeholder="CARDHOLDER NAME"><br/>
+        <input type = "text" required placeholder="e.g. Jane Appleseed" class="fcard_name"><br/>
         <label for = "card_number">CARD NUMBER</label>
-        <input type = "number" required placeholder="CARD NUMBER"><br/>
+        <input type = "text" required placeholder="e.g. 1234 5678 9123 0000" class="fcard_number"><br/>
         <div class="card_labelFor_time">
           <label for = "card_date">EXP.DATE (MM/YY)</label>
           <label for = "card_date">CVV</label>
         </div>
         <div class="card_time_wraper">
           <div class="card_m_y">
-            <input type="number" name="" id="" placeholder="MM"><input type="number" name="" id="" placeholder="YY"></div>
-          <div class="card_cvv"><input type="number" name="" id="" placeholder="e.g. 123"></div>
+            <input type="text" id="card_m" placeholder="MM" required><input type="number" name="" id="" placeholder="YY"></div>
+          <div class="card_cvv"><input type="number" name="" id="card_cvv" placeholder="e.g. 123"></div>
         </div>
         <div class="card_labelFor_time">
-          <label for = "card_date"></label>
-          <label for = "card_date"></label>
+          <label for = "card_date" class="card_m_y_error"></label>
+          <label for = "card_date" class="card_cvv_error"></label>
         </div>
         <br>
         <button type="submit" id = "card_btn">Confirm</button>
@@ -45,7 +45,7 @@
 
     </section>
   </main>
-
+  <script src="index.js"></script>
  <!--0000 0000 0000 0000
   Jane Appleseed
   00/00
