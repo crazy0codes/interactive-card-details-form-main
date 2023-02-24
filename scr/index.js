@@ -18,3 +18,40 @@ Card_form.addEventListener('input',function(){
     }
 })
 
+var Name = "Madhan";
+
+const obj ={
+    LastName : "SDF",
+
+    getFullName() {
+        return this.LastName + " " + this[Name]
+    }
+};
+
+
+obj[Name] = "FirstName"
+
+console.log(obj.getFullName());
+
+
+var Cloned_obj = Object.assign({},obj);
+
+console.log(
+
+(Cloned_obj.getFullName === obj.getFullName) ? true : false
+
+)
+
+Cloned_obj = structuredClone({},obj)
+
+console.log(
+
+    (Cloned_obj.getFullName === obj.getFullName) ? true : false
+    
+    )
+
+var a = confirm("Do you agree") ?? false;
+
+while(a != false){
+    a
+} 
