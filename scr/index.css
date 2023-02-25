@@ -14,7 +14,7 @@ main {
 }
 
 .style {
-    flex: 28%;
+    min-width: 400px;
     background-image: url("/images/bg-main-desktop.png");
 }
 

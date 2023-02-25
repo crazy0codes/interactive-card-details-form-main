@@ -3,7 +3,8 @@
 const Card_form = document.querySelector('form'); // Form
 const Card_Name = document.querySelector('.fcard_name'); //Card's Name
 const Card_Number = document.querySelector('.fcard_number'); //Card's Number
-const input = document.querySelector('#card_m'); //Card's year and month
+const input = document.querySelector('#card_m'); //Card's month
+const Year = document.querySelector('#cardyear'); //Card's month
 const Card_Cvv = document.querySelector('#card_cvv'); //Card's CVV number
 
 /* Errors */
@@ -47,20 +48,43 @@ function formatCard_Number(event) {
   }
 }
 
+input.addEventListener('input', dates);
+function dates() {
+      // Remove any non-numeric characters
+      this.value = this.value.replace(/\D/g,"");
 
-input.addEventListener('input', function() {
+      // Ensure length is not greater than 2
+      if (this.value.length > 2) {
+        this.value = this.value.slice(0, 2);
+      }
+      else {
+        if(this.value>12)
+        this.value = 12;
+      }
+}
+
+Year.addEventListener('input',year);
+function year() {
+    // Remove any non-numeric characters
+    this.value = this.value.replace(/\D/g,"");
+
+    // Ensure length is not greater than 2
+    if (this.value.length > 2) {
+      this.value = this.value.slice(0, 2);
+    }
+}
+
+Card_Cvv.addEventListener('input',cardcvc);
+function cardcvc() {
   // Remove any non-numeric characters
   this.value = this.value.replace(/\D/g,"");
 
-  // Ensure length is not greater than 2
+  // Ensure length is not greater than 3
   if (this.value.length > 2) {
-    this.value = this.value.slice(0, 2);
+    this.value = this.value.slice(0, 3);
   }
+}
 
-  // Ensure value is not greater than 12
-  const value = parseInt(this.value);
-  if (value > 12) {
-    this.value = 12;
-  }
-});
-
+Card_form.addEventListener('submit',function(){
+  
+})
