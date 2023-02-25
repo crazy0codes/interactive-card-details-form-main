@@ -23,25 +23,6 @@ if(Card_Number.value == '\b'){
 
 })
 
-// Card_Name.addEventListener('input',
-// function(){
-//    //Converting the Card's Name to UpperCase letters
-//    Card_Name.value = Card_Name.value.toUpperCase(); 
-
-//    //Removing the xharacters that are not Letters
-//    let Card_Name_len = Card_Name.value.length;
-//    let latestLetter = Card_Name.value[Card_Name_len-1]
-//    let Check = function(latestLetter) {
-//     return /[A-Z]/.test(latestLetter);
-//   }
-//   let isLetter = Check(latestLetter);
-//   if (isLetter) {
-//     alert("It is a letter");
-//   } else {
-//     alert("It is not a letter");
-//   }
-//   })
-
 Card_Name.addEventListener("input", checkCardName);
 function checkCardName(event) {
     // Convert the card name to uppercase letters
@@ -59,6 +40,18 @@ function checkCardName(event) {
       Card_Name_Error.innerText = "";
     }
   }
-  
-  
-  
+
+Card_Number.addEventListener("input", formatCard_Number);
+function formatCard_Number(event) {
+  let input = event.target;
+  let cardNumber = input.value.replace(/\D/g, "");
+  let formattedNumber = formatCardNumber(cardNumber);
+  input.value = formattedNumber;
+
+  function formatCardNumber(cardNumber) {
+    let regex = /(\d{1,4})/g;
+    let formattedNumber = cardNumber.replace(regex, "$1 ");
+    formattedNumber = formattedNumber.trim();
+    return formattedNumber;
+  }
+}
