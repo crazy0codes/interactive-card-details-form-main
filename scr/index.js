@@ -19,7 +19,11 @@ Card_form.addEventListener('input',function(){
 })
 
 var Name = "Madhan";
+console.log(
 
+(Cloned_obj.getFullName === obj.getFullName) ? true : false
+
+)
 const obj ={
     LastName : "SDF",
 
