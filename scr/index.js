@@ -3,7 +3,7 @@
 const Card_form = document.querySelector('form'); // Form
 const Card_Name = document.querySelector('.fcard_name'); //Card's Name
 const Card_Number = document.querySelector('.fcard_number'); //Card's Number
-const Card_Month = document.querySelector('#card_m'); //Card's year and month
+const input = document.querySelector('#card_m'); //Card's year and month
 const Card_Cvv = document.querySelector('#card_cvv'); //Card's CVV number
 
 /* Errors */
@@ -14,15 +14,6 @@ const Card_Name_Error = document.querySelector('.card_name_error');
 
 /* Adding functionality to the form*/
 
-Card_form.addEventListener('input',function(){
-
-//Card's Number dividing after 4 digits
-if(Card_Number.value == '\b'){
-    alert("User entered the BackSpace")
-}
-
-})
-
 Card_Name.addEventListener("input", checkCardName);
 function checkCardName(event) {
     // Convert the card name to uppercase letters
@@ -31,7 +22,7 @@ function checkCardName(event) {
     Card_Name.value = cardName;
   
     // Check if the card name contains only letters
-    let containsOnlyLetters = /^[A-Z]+$/.test(cardName);
+    let containsOnlyLetters = /^[A-Z ]+$/.test(cardName);
   
     // Display an error message if the card name contains non-letter characters
     if (!containsOnlyLetters) {
@@ -55,3 +46,21 @@ function formatCard_Number(event) {
     return formattedNumber;
   }
 }
+
+
+input.addEventListener('input', function() {
+  // Remove any non-numeric characters
+  this.value = this.value.replace(/\D/g,"");
+
+  // Ensure length is not greater than 2
+  if (this.value.length > 2) {
+    this.value = this.value.slice(0, 2);
+  }
+
+  // Ensure value is not greater than 12
+  const value = parseInt(this.value);
+  if (value > 12) {
+    this.value = 12;
+  }
+});
+
