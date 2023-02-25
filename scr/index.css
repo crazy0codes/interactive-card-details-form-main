@@ -101,5 +101,8 @@ input {
 .card_m_y_error,.card_cvv_error {
     color: red;
 }
+.card_name_error {
+    color: red;
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
