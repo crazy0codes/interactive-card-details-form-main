@@ -88,15 +88,63 @@ input {
 .card_cvv>input {
     width: 98%;
 }
-.bg_card_fornt {
-    position: fixed;
+
+#bg_card_front_id {
+    position:absolute;
     height: 200px;
     transform: translate(50%,70%);
 }
+
+#bg_card_front_id>svg {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+#bg_card_front_id>p {
+    position: absolute;
+    font-size: 21px;
+    color: white;
+    bottom: 54px;
+    left: 24px;
+    letter-spacing:2.6px;
+}
+
+.bg_card_fornt {
+    height: inherit;
+}
+
 .bg_card_back {
-    position:fixed;
+    height: inherit;
+}
+
+#bg_card_front_name>* {
+    position: absolute;
+    font-size: 11px;
+    bottom: 18px;
+    color: white;
+    letter-spacing: 1.4px;
+}
+
+#bg_card_front_name>p:nth-child(1) {
+    left: 24px;
+}
+
+#bg_card_front_name>p:nth-child(2) {
+    right: 30px;
+}
+
+#bg_card_back_id {
+    position:relative;
     height: 200px;
     transform: translate(65%,186%);
+}
+
+#bg_card_back_id>p{
+    position: absolute;
+    color: white;
+    top: 90px;
+    right: 80px;
+    letter-spacing: 1.2px;
 }
 .card_m_y_error,.card_cvv_error {
     color: red;
