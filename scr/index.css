@@ -14,10 +14,10 @@ main {
 }
 
 .style {
-    min-width: 400px;
+    position: relative;
+    min-width: 40px;
     background-image: url("/images/bg-main-desktop.png");
 }
-
 .style_form {
     flex: 72%;
     display: grid;
@@ -146,11 +146,17 @@ input {
     right: 80px;
     letter-spacing: 1.2px;
 }
+.bg_card_back {
+    position: relative;
+}
+
 .card_m_y_error,.card_cvv_error {
     color: red;
 }
 .card_name_error {
     color: red;
 }
+
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
